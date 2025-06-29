@@ -1,0 +1,71 @@
+{
+  "info": {
+    "name": "Zero Mile Delivery API",
+    "_postman_id": "12345678-1234-5678-1234-567812345678",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Parcel",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"vendor_id\": 1,\n  \"customer_name\": \"Alice\",\n  \"address\": \"123 Main Street\",\n  \"contact_number\": \"1234567890\",\n  \"size\": \"medium\",\n  \"weight\": 2.5\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/parcels",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "parcels"]
+        }
+      }
+    },
+    {
+      "name": "Get All Parcels",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/api/parcels",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "parcels"]
+        }
+      }
+    },
+    {
+      "name": "Update Parcel Status",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"delivered\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/parcels/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "parcels", "1"]
+        }
+      }
+    },
+    {
+      "name": "Delete Parcel",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:3000/api/parcels/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "parcels", "1"]
+        }
+      }
+    }
+  ]
+}
